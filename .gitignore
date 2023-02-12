@@ -1,0 +1,6 @@
+py_env
+*.o
+*.exe
+.sconsign.dblite
+.vscode
+.venv
