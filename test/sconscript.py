@@ -13,7 +13,7 @@ gtest = env.StaticLibrary(target='gtest',
 gtest_main = env.StaticLibrary(target='gtest_main',
                                source= gtest_sources + ['../googletest/googletest/src/gtest_main.cc'])
 
-env.Append(CPPPATH = ['../src'])
-env.Program(target = 'test_hello.exe', 
-            source = ['test_hello.cpp','../src/hello.c', '../src/squareRoot.c'], 
+env.Append(CPPPATH = ['../inc'])
+env.Program(target = 'test.exe', 
+            source = ['test_squareRoot.cpp', '../src/squareRoot.c'], 
             LIBS=[gtest_main]) 

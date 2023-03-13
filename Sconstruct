@@ -1,15 +1,16 @@
 mingw_path = 'C:/msys64/mingw64/bin/'
 
 env=DefaultEnvironment(tools=['mingw'],
-                    #CC = mingw_path + 'x86_64-w64-mingw32-gcc.exe',
-                    #CXX = mingw_path + 'x86_64-w64-mingw32-g++.exe')
                     CC = 'gcc.exe',
                     CXX = 'g++.exe')
 
 env.Append(CPPPATH = [mingw_path + '../include'])
+env.Append(CPPPATH = ['inc'])
+# Build main program.
+# This a C program.
+env.Program(target = 'main.exe',
+            source = ['main.c', 'src/squareRoot.c'])
 
-env.Program('main.cpp')
-
+# 
 Export('env')
-SConscript(['test/sConscript.py',
-            ])
+SConscript(['test/sConscript.py'])

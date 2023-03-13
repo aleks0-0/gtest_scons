@@ -1,5 +1,6 @@
 py_env
 *.o
+*.a
 *.exe
 .sconsign.dblite
 .vscode
